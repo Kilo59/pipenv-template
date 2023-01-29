@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+black = "*"
+mypy = "*"
+pre-commit = "*"
+ruff = "*"
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+fmt = "black ."
+lint = "ruff ."
+fix = "ruff . --fix"
+types = "mypy"
+# run hooks on any changed files
+hooks = "pre-commit run --from-ref origin/HEAD --to-ref HEAD"
